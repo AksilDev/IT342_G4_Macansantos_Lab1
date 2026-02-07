@@ -1,0 +1,219 @@
+/* web/src/page/Login.css */
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif; /* You can import a Google Font later */
+}
+
+/* Main Container - Holds the Background Image */
+.login-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  /* PLACEHOLDER: Put your background image here */
+  background: url('../assets/bg-image.jpg') no-repeat center center/cover;
+}
+
+/* Dark overlay to make text pop if image is bright */
+.login-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* Adjust darkness here */
+  z-index: 1;
+}
+
+/* The Top Text: "Extend the life of Your Gear" */
+.brand-slogan {
+  position: relative;
+  z-index: 2;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-family: 'Courier New', Courier, monospace; /* Slab serif look */
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+/* The White Card */
+.login-card {
+  position: relative;
+  z-index: 2;
+  background-color: white;
+  padding: 40px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  text-align: center;
+  font-family: 'Alfa Slab One', serif;
+}
+
+/* Header Section */
+.login-header h1 {
+  color: #2e1a47; /* Dark Purple */
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 5px;
+  font-family: 'Rockwell', serif; /* Slab serif font match */
+  letter-spacing: 1px;
+}
+
+.login-header p {
+  color: #6b7280;
+  margin-bottom: 30px;
+  font-size: 0.95rem;
+}
+
+/* Form Groups */
+.form-group {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #f9fafb;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+  border-color: #7c3aed; /* Purple focus */
+}
+
+/* Remember Me & Forgot Password */
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  font-size: 0.85rem;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #4b5563;
+}
+
+.forgot-password {
+  color: #111827;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Main Button */
+.btn-primary {
+  width: 100%;
+  padding: 14px;
+  background-color: #7c3aed; /* Bright Purple */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  box-shadow: 0 4px 6px -1px rgba(124, 58, 237, 0.4);
+}
+
+.btn-primary:hover {
+  background-color: #6d28d9;
+}
+
+/* Divider */
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 25px 0;
+  color: #6b7280;
+  font-size: 0.85rem;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.divider span {
+  padding: 0 10px;
+}
+
+/* Social Buttons */
+.social-login {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.btn-social {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #374151;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-social:hover {
+  background-color: #f9fafb;
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+/* Footer */
+.login-footer {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.footer-links {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  border-top: 1px solid #f3f4f6;
+  padding-top: 15px;
+}
+
+.footer-links a {
+  color: #374151;
+  text-decoration: none;
+}

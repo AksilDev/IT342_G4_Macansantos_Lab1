@@ -1,48 +1,61 @@
-import { Container, Typography, Grid, Card, CardContent, Box, Button, Divider, Chip } from '@mui/material';
-import ConstructionIcon from '@mui/icons-material/Construction';
-import HistoryIcon from '@mui/icons-material/History';
+import { Container, Typography, Box, Avatar, Paper } from '@mui/material';
 
 function Dashboard() {
   const username = localStorage.getItem("username") || "User";
 
   return (
-    <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-      <Box sx={{ mb: 4 }}>
-        <Typography variant="h4" color="primary" gutterBottom>Welcome back, {username}!</Typography>
-        <Typography variant="body1" color="text.secondary">Here is what's happening with your gear today.</Typography>
+    <Container maxWidth="md" sx={{ mt: 8, mb: 4 }}>
+      <Box sx={{ textAlign: 'center', py: 8 }}>
+        <Paper 
+          elevation={3} 
+          sx={{ 
+            p: 6, 
+            borderRadius: 4,
+            background: 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)',
+          }}
+        >
+          <Avatar 
+            sx={{ 
+              width: 80, 
+              height: 80, 
+              mx: 'auto', 
+              mb: 3,
+              bgcolor: 'primary.main',
+              fontSize: 32,
+              fontWeight: 'bold'
+            }}
+          >
+            {username.charAt(0).toUpperCase()}
+          </Avatar>
+          
+          <Typography 
+            variant="h3" 
+            component="h1" 
+            gutterBottom
+            sx={{ 
+              fontWeight: 700,
+              color: 'primary.main',
+              mb: 2
+            }}
+          >
+            Welcome, {username}!
+          </Typography>
+          
+          <Typography 
+            variant="h6" 
+            color="text.secondary"
+            sx={{ mb: 4, maxWidth: 600, mx: 'auto' }}
+          >
+            Glad to have you here. Your dashboard is ready and waiting for you to explore.
+          </Typography>
+          
+          <Box sx={{ mt: 4 }}>
+            <Typography variant="body2" color="text.secondary">
+              Start your journey with MiniApp
+            </Typography>
+          </Box>
+        </Paper>
       </Box>
-
-      <Grid container spacing={3}>
-        <Grid item xs={12} md={8}>
-          <Card sx={{ p: 2 }}>
-            <CardContent>
-              <Typography variant="h6" gutterBottom>Active Service Requests</Typography>
-              <Divider sx={{ mb: 2 }} />
-
-              <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', mb: 2 }}>
-                <Chip label="No active requests" color="info" variant="outlined" />
-                <Chip label="0 Pending" sx={{ borderColor: 'text.disabled' }} />
-                <Chip label="0 In Progress" sx={{ borderColor: 'text.disabled' }} />
-              </Box>
-
-              <Box sx={{ py: 4, textAlign: 'center', bgcolor: '#fbfbff', borderRadius: 2 }}>
-                 <ConstructionIcon sx={{ fontSize: 40, color: 'text.disabled', mb: 1 }} />
-                 <Typography color="text.secondary">No active cleaning or repairs found.</Typography>
-                 <Button variant="contained" sx={{ mt: 2 }}>Book a Technician</Button>
-              </Box>
-            </CardContent>
-          </Card>
-        </Grid>
-        
-        <Grid item xs={12} md={4}>
-          <Card>
-            <CardContent>
-              <Typography variant="h6" gutterBottom><HistoryIcon sx={{ mr: 1 }} /> Recent Activity</Typography>
-              <Typography variant="body2" color="text.secondary">Joined the MiniApp platform</Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-      </Grid>
     </Container>
   );
 }

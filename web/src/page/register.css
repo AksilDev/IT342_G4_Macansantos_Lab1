@@ -1,0 +1,161 @@
+/* web/src/page/register.css */
+
+.register-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    position: relative;
+    /* Uses the same background logic as login */
+    background: url('../assets/bg-image.png') no-repeat center center/cover;
+    background-attachment: fixed;
+}
+
+.register-container::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(255, 255, 255, 0.85); /* Lighter overlay for Register */
+    z-index: 1;
+}
+
+/* Header Section */
+.register-header {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 30px;
+    max-width: 600px;
+}
+
+.register-header h1 {
+    font-family: 'Inter', sans-serif; /* Change to 'Alfa Slab One' if you prefer */
+    color: #5a31a7;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+/* The Purple Divider with Circle */
+.title-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.title-divider .line {
+    height: 4px;
+    width: 150px;
+    background: #a855f7;
+    border-radius: 2px;
+}
+
+.title-divider .dot {
+    width: 12px;
+    height: 12px;
+    background: #5a31a7;
+    border-radius: 50%;
+    margin: 0 10px;
+}
+
+.register-header p {
+    color: #374151;
+    font-weight: 500;
+}
+
+.signin-link {
+    color: #a855f7;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Registration Card */
+.register-card {
+    position: relative;
+    z-index: 2;
+    background: white;
+    width: 100%;
+    max-width: 700px;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.register-card h2 {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: #111827;
+}
+
+/* Form Layout */
+.form-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #374151;
+}
+
+.form-group input, .form-group select {
+    padding: 14px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    background: #f9fafb;
+    font-size: 0.95rem;
+    outline: none;
+}
+
+/* Specialized Styles for the Button */
+.btn-complete {
+    margin-top: 20px;
+    padding: 16px;
+    background: #7c3aed;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: transform 0.2s;
+}
+
+.btn-complete:hover {
+    transform: translateY(-2px);
+    background: #6d28d9;
+}
+
+.register-footer {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 0.85rem;
+    color: #6b7280;
+}
+
+.register-footer a {
+    color: #7c3aed;
+    text-decoration: none;
+    font-weight: 600;
+}

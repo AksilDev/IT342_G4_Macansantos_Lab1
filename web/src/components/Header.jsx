@@ -43,26 +43,18 @@ export default function Header() {
             MiniApp
           </Typography>
 
-          {!token ? (
-            <>
-              <Button color="inherit" component={RouterLink} to="/login">Login</Button>
-              <Button color="inherit" component={RouterLink} to="/register">Register</Button>
-            </>
-          ) : (
-            <>
-              <Tooltip title={username || 'User'}>
-                <IconButton onClick={handleOpen} sx={{ p: 0 }}>
-                  <Avatar sx={{ width: 36, height: 36 }}>{initials}</Avatar>
-                </IconButton>
-              </Tooltip>
+          <Tooltip title={username || 'User'}>
+            <IconButton onClick={handleOpen} sx={{ p: 0 }}>
+              <Avatar sx={{ width: 36, height: 36 }}>{initials}</Avatar>
+            </IconButton>
+          </Tooltip>
 
-              <Menu anchorEl={anchorEl} open={open} onClose={handleClose} onClick={handleClose} transformOrigin={{ horizontal: 'right', vertical: 'top' }} anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}>
-                <MenuItem component={RouterLink} to="/profile">Profile</MenuItem>
-                <MenuItem component={RouterLink} to="/dashboard">Dashboard</MenuItem>
-                <MenuItem onClick={handleLogout}>Logout</MenuItem>
-              </Menu>
-            </>
-          )}
+          <Menu anchorEl={anchorEl} open={open} onClose={handleClose} onClick={handleClose} transformOrigin={{ horizontal: 'right', vertical: 'top' }} anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}>
+            <MenuItem component={RouterLink} to="/profile">Profile</MenuItem>
+            <MenuItem component={RouterLink} to="/dashboard">Dashboard</MenuItem>
+            <MenuItem component={RouterLink} to="/login">Login</MenuItem>
+            <MenuItem component={RouterLink} to="/register">Register</MenuItem>
+          </Menu>
         </Toolbar>
       </AppBar>
     </Box>
