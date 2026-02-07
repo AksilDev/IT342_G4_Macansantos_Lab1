@@ -14,12 +14,245 @@ html, body, #root {
 }
 
 body {
-  background-color: #f6f7fb;
+  background-color: #0a0a0a;
   overflow-x: hidden;
 }
 
+/* Dark Auth Container */
+.dark-auth-container {
+  min-height: 100vh;
+  background: radial-gradient(ellipse at center, #1a1a2e 0%, #0a0a0a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+}
+
+/* Star field background effect */
+.dark-auth-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+    radial-gradient(2px 2px at 40px 70px, #eee, transparent),
+    radial-gradient(1px 1px at 50px 50px, #eee, transparent),
+    radial-gradient(1px 1px at 80px 10px, #eee, transparent),
+    radial-gradient(2px 2px at 130px 80px, #eee, transparent),
+    radial-gradient(1px 1px at 110px 120px, #eee, transparent);
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  opacity: 0.3;
+  animation: twinkle 5s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.3; }
+  100% { opacity: 0.5; }
+}
+
+/* Auth Card */
+.auth-card {
+  background: rgba(30, 30, 30, 0.95) !important;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px !important;
+  padding: 40px !important;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    0 0 100px rgba(114, 20, 224, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+  position: relative;
+  z-index: 1;
+}
+
+/* Logo Section */
+.logo-section {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #7214E0, #8b3bf5);
+  border-radius: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  position: relative;
+  box-shadow: 0 8px 32px rgba(114, 20, 224, 0.3);
+}
+
+/* Logo dots pattern */
+.logo::before {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-image: 
+    radial-gradient(2px 2px at 10px 10px, rgba(255, 255, 255, 0.3), transparent),
+    radial-gradient(2px 2px at 20px 20px, rgba(255, 255, 255, 0.2), transparent),
+    radial-gradient(1px 1px at 30px 5px, rgba(255, 255, 255, 0.3), transparent),
+    radial-gradient(1px 1px at 5px 30px, rgba(255, 255, 255, 0.2), transparent);
+  background-repeat: no-repeat;
+  top: -10px;
+  left: -10px;
+  z-index: -1;
+}
+
+.welcome-title {
+  color: white !important;
+  font-weight: 700 !important;
+  margin-bottom: 8px !important;
+  font-size: 24px !important;
+}
+
+.welcome-subtitle {
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-size: 14px !important;
+}
+
+/* Social Login Section */
+.social-login-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.social-btn {
+  background: rgba(50, 50, 50, 0.8) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: white !important;
+  padding: 12px 20px !important;
+  border-radius: 12px !important;
+  text-transform: none !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+}
+
+.social-btn:hover {
+  background: rgba(70, 70, 70, 0.9) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Auth Divider */
+.auth-divider {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  margin: 24px 0 !important;
+  color: rgba(255, 255, 255, 0.5) !important;
+  font-size: 14px !important;
+}
+
+/* Email Login Section */
+.email-login-section {
+  margin-bottom: 24px;
+}
+
+.email-label {
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-weight: 500 !important;
+  margin-bottom: 8px !important;
+  font-size: 14px !important;
+}
+
+.email-input {
+  margin-bottom: 16px !important;
+}
+
+.email-input .MuiOutlinedInput-root {
+  background: rgba(40, 40, 40, 0.8) !important;
+  border-radius: 12px !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.email-input .MuiOutlinedInput-input {
+  color: white !important;
+  padding: 14px 16px !important;
+}
+
+.email-input .MuiInputLabel-root {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.email-input .MuiOutlinedInput-notchedOutline {
+  border: none !important;
+}
+
+.email-input .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border: none !important;
+}
+
+.email-input .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border: none !important;
+}
+
+.email-input .MuiInputBase-input::placeholder {
+  color: rgba(255, 255, 255, 0.4) !important;
+  opacity: 1 !important;
+}
+
+/* Email Login Button */
+.email-login-btn {
+  background: rgba(40, 40, 40, 0.9) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: white !important;
+  padding: 14px 20px !important;
+  border-radius: 12px !important;
+  text-transform: none !important;
+  font-weight: 600 !important;
+  margin-top: 8px !important;
+  transition: all 0.3s ease !important;
+}
+
+.email-login-btn:hover {
+  background: rgba(60, 60, 60, 0.9) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* SSO Text */
+.sso-text {
+  color: rgba(255, 255, 255, 0.5) !important;
+  text-align: center !important;
+  font-size: 13px !important;
+  margin-bottom: 20px !important;
+}
+
+/* Register Link */
+.register-link {
+  color: rgba(255, 255, 255, 0.6) !important;
+  text-align: center !important;
+  font-size: 14px !important;
+}
+
+.register-link a {
+  color: #7214E0 !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+}
+
+.register-link a:hover {
+  text-decoration: underline !important;
+}
+
+/* Legacy styles for compatibility */
 .auth-split {
-  min-height: calc(100vh - 64px); /* Subtract header height */
+  min-height: calc(100vh - 64px);
 }
 
 .auth-left {
@@ -28,7 +261,6 @@ body {
   overflow: hidden;
 }
 
-/* Background Decoration */
 .auth-left::before {
   content: "";
   position: absolute;
