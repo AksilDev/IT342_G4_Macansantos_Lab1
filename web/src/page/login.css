@@ -7,6 +7,24 @@
   font-family: 'Inter', sans-serif; /* You can import a Google Font later */
 }
 
+.error-message {
+  color: #dc2626;
+  background-color: #fee2e2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.field-error {
+  color: #dc2626;
+  font-size: 0.8rem;
+  margin-top: 5px;
+  display: block;
+}
+
 /* Main Container - Holds the Background Image */
 .login-container {
   width: 100%;
@@ -16,8 +34,10 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  /* PLACEHOLDER: Put your background image here */
-  background: url('../assets/bg-image.jpg') no-repeat center center/cover;
+
+
+  
+  
 }
 
 /* Dark overlay to make text pop if image is bright */
@@ -101,6 +121,12 @@
 
 .form-group input:focus {
   border-color: #7c3aed; /* Purple focus */
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+}
+
+.form-group input.error {
+  border-color: #dc2626;
+  background-color: #fff5f5;
 }
 
 /* Remember Me & Forgot Password */
@@ -216,4 +242,10 @@
 .footer-links a {
   color: #374151;
   text-decoration: none;
+}
+
+/* Input validation states */
+.form-group input.success {
+  border-color: #10b981;
+  background-color: #f0fdf4;
 }
