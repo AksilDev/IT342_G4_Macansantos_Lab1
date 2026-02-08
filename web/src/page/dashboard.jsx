@@ -1,7 +1,16 @@
 import { Container, Typography, Box, Avatar, Paper } from '@mui/material';
+import { useEffect } from 'react';
 
 function Dashboard() {
+  const token = localStorage.getItem('token');
   const username = localStorage.getItem("username") || "User";
+
+  // Extra security check
+  useEffect(() => {
+    if (!token) {
+      window.location.href = '/login';
+    }
+  }, [token]);
 
   return (
     <Container maxWidth="md" sx={{ mt: 8, mb: 4 }}>
@@ -25,7 +34,7 @@ function Dashboard() {
               fontWeight: 'bold'
             }}
           >
-            {username.charAt(0).toUpperCase()}
+            {username.split(' ').map(n => n[0]).join('').toUpperCase() || 'U'}
           </Avatar>
           
           <Typography 

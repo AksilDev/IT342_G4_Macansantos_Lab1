@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './register.css';
 import api from '../services/api';
@@ -17,6 +17,14 @@ const Register = () => {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState('');
   const navigate = useNavigate();
+
+  // Redirect if already logged in
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      navigate('/dashboard');
+    }
+  }, [navigate]);
 
   const validateField = (name, value) => {
     const newErrors = { ...errors };
