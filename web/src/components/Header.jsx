@@ -15,6 +15,16 @@ export default function Header() {
   const navigate = useNavigate();
   const token = localStorage.getItem('token');
   const username = localStorage.getItem('username') || '';
+  
+  const handleLogoClick = () => {
+    if (token) {
+      // If logged in, go to dashboard
+      navigate('/dashboard');
+    } else {
+      // If not logged in, go to login
+      navigate('/login');
+    }
+  };
 
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
@@ -39,7 +49,17 @@ export default function Header() {
         sx={{ background: 'linear-gradient(90deg, rgba(114,20,224,0.96), rgba(107,18,220,0.86))', boxShadow: '0 6px 18px rgba(114,20,224,0.12)' }}
       >
         <Toolbar>
-          <Typography variant="h6" component={RouterLink} to="/" sx={{ textDecoration: 'none', color: 'inherit', flexGrow: 1, fontWeight: 700 }}>
+          <Typography 
+            variant="h6" 
+            onClick={handleLogoClick}
+            sx={{ 
+              cursor: 'pointer',
+              textDecoration: 'none', 
+              color: 'inherit', 
+              flexGrow: 1, 
+              fontWeight: 700 
+            }}
+          >
             MiniApp
           </Typography>
 
@@ -50,10 +70,20 @@ export default function Header() {
           </Tooltip>
 
           <Menu anchorEl={anchorEl} open={open} onClose={handleClose} onClick={handleClose} transformOrigin={{ horizontal: 'right', vertical: 'top' }} anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}>
-            <MenuItem component={RouterLink} to="/profile">Profile</MenuItem>
-            <MenuItem component={RouterLink} to="/dashboard">Dashboard</MenuItem>
-            <MenuItem component={RouterLink} to="/login">Login</MenuItem>
-            <MenuItem component={RouterLink} to="/register">Register</MenuItem>
+            {token ? (
+              // Logged in user menu
+              <>
+                <MenuItem component={RouterLink} to="/profile">Profile</MenuItem>
+                <MenuItem component={RouterLink} to="/dashboard">Dashboard</MenuItem>
+                <MenuItem onClick={handleLogout}>Logout</MenuItem>
+              </>
+            ) : (
+              // Guest user menu
+              <>
+                <MenuItem component={RouterLink} to="/login">Login</MenuItem>
+                <MenuItem component={RouterLink} to="/register">Register</MenuItem>
+              </>
+            )}
           </Menu>
         </Toolbar>
       </AppBar>
