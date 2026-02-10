@@ -3,8 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import './login.css';
 import api from '../services/api';
 
-import GoogleIcon from '../assets/googleicon.png';
-import FacebookIcon from '../assets/fbicon.png';
+
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -177,25 +176,6 @@ const Login = () => {
             {loading ? 'Signing in...' : 'Sign In to MiniAPP'}
           </button>
         </form>
-
-        {/* Divider */}
-        <div className="divider">
-          <span>Or continue with</span>
-        </div>
-
-        {/* Social Login Buttons */}
-        <div className="social-login">
-          <button className="btn-social">
-            {/* PLACEHOLDER ICON */}
-            <img src={GoogleIcon} alt="Google" className="social-icon" />
-            Google
-          </button>
-          <button className="btn-social">
-            {/* PLACEHOLDER ICON */}
-            <img src={FacebookIcon} alt="Facebook" className="social-icon" />
-            Facebook
-          </button>
-        </div>
 
         {/* Footer */}
         <div className="login-footer">
