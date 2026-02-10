@@ -25,7 +25,7 @@
   display: block;
 }
 
-/* Main Container - Holds the Background Image */
+/* Main Container - Purple Gradient Background */
 .login-container {
   width: 100%;
   min-height: 100vh;
@@ -34,23 +34,10 @@
   align-items: center;
   justify-content: center;
   position: relative;
-
-
-  
-  
+  background: linear-gradient(135deg, #5D10B9 0%, #6C12D7 100%);
 }
 
-/* Dark overlay to make text pop if image is bright */
-.login-container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.4); /* Adjust darkness here */
-  z-index: 1;
-}
+
 
 /* The Top Text: "Extend the life of Your Gear" */
 .brand-slogan {
@@ -170,59 +157,7 @@
   background-color: #6d28d9;
 }
 
-/* Divider */
-.divider {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  margin: 25px 0;
-  color: #6b7280;
-  font-size: 0.85rem;
-}
 
-.divider::before,
-.divider::after {
-  content: '';
-  flex: 1;
-  border-bottom: 1px solid #e5e7eb;
-}
-
-.divider span {
-  padding: 0 10px;
-}
-
-/* Social Buttons */
-.social-login {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 30px;
-}
-
-.btn-social {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 10px;
-  background-color: white;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  color: #374151;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.btn-social:hover {
-  background-color: #f9fafb;
-}
-
-.social-icon {
-  width: 20px;
-  height: 20px;
-  object-fit: contain;
-}
 
 /* Footer */
 .login-footer {
